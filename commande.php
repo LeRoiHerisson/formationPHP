@@ -10,7 +10,8 @@
 
     <?php
     $dbh = new PDO('mysql:host=localhost;dbname=eCommercePHP','root','root');
-    $stmt=$dbh->prepare("SELECT * FROM commande 
+    $stmt=$dbh->prepare("SELECT `client`.*, `commande`.*, `produit`.*, `produit_commande`.*
+        FROM `client`, `commande`, `produit`, `produit_commande`; 
         INNER JOIN produit_commande ON produit_commande.idcommande = commande.idcommande 
         INNER JOIN produit_commande ON produit_commande.idproduit = produit.idproduit
         INNER JOIN commande ON commande.idclient = client.idclient

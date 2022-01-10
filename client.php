@@ -10,7 +10,9 @@
 
     <?php
     $dbh = new PDO('mysql:host=localhost;dbname=eCommercePHP','root','root');
-    $stmt=$dbh->prepare("SELECT * FROM client INNER JOIN adresse ON adresse.idadresse = client.idadresse WHERE idclient = :idclient");
+    $stmt=$dbh->prepare("SELECT * FROM client 
+                        INNER JOIN adresse ON adresse.idadresse = client.idadresse 
+                        WHERE idclient = :idclient");
     $stmt->bindParam(':idclient', $_GET['idclient']);
     
     $stmt->execute();

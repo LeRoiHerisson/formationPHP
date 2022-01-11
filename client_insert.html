@@ -20,7 +20,31 @@
     <label for="telephone">Telphone :</label>
 	<input type="tel" id="telephone" name="telephone" required>
     <br>
-    
+        <form id="form1" name="form1" method="post" action="<?php $_SERVER['PHP_SELF']?>">
+        Car Name:
+        <select name='NEW'>
+        <option value="">--- Select ---</option>
+        <?php
+        mysql_connect("localhost","root","");
+        mysql_select_db("vinod");
+        $select="vinod";
+        if(isset($select)&&$select!=""){
+        $select=$_POST['NEW'];
+        }
+        ?>
+        <?php
+        $list=mysql_query("select * from car order by c_name asc");
+        while($row_list=mysql_fetch_assoc($list)){
+        ?>
+        <option value="<?php echo $row_list['c_id']; ?>">
+         <?php if($row_list['c_id']==$select){ echo "selected"; } ?>
+         <?php echo $row_list['c_name']; ?>
+        </option>
+        <?php
+        }
+        ?>
+        </select>
+        </form>
     <br>
 	<button type="submit" form="form_insert" value="Submit">Valider</button>
 </form>

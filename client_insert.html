@@ -34,13 +34,11 @@
         Adresse:
         <select name='NEW'>
         <option value="">--- Select ---</option>
+        <option value="<?php $list=mysql_query("SELECT * FROM adresse ORDER BY adresse ASC"); while($row_list=mysql_fetch_assoc($list)){}?>""
         <option value="<?php echo $row_list['idadresse']; ?>">
          <?php if($row_list['idadresse']==$select){ echo "selected"; } ?>
          <?php echo $row_list['adresse']; ?>
-         <?php
-            $list=mysql_query("SELECT * FROM adresse ORDER BY adresse ASC");
-            while($row_list=mysql_fetch_assoc($list)){}
-            ?>
+         
         </option>
         </select>
         </form>

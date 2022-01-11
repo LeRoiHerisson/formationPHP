@@ -62,7 +62,7 @@ try {
         <?php
         $stmt=$dbh->prepare("SELECT adresse FROM adresse");
         $stmt->execute();
-        foreach($stmt->fetchAll() AS $line){
+        foreach($stmt->fetchAll(PDO::FETCH_NUM) AS $line){
           echo '<option value ="'.$line[0].'">'.$line[0].'</option>';
         }
 

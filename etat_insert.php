@@ -14,6 +14,8 @@ try {
 	print "Erreur !: " . $e->getMessage() . "<br/>";
 	die();
 }
-?> 
+ 
 
-// SELECT * FROM etats
+// SELECT * FROM etat;
+
+?>

@@ -47,12 +47,12 @@ try {
 	<input type="tel" id="telephone" name="telephone" required>
     <br>
     <label for="adresse">Adresse :</label>
-        <select name='adresse'>
+        <select name="adresse" id="adresse'">
         <option value="">--- Select ---</option>
         <?php
         $stmt=$dbh->prepare("SELECT adresse FROM adresse");
         $stmt->execute();
-        foreach($stmt->fetchAll(PDO::FETCH_NUM) AS $line){
+        foreach($stmt->fetchAll(/*PDO::FETCH_NUM*/) AS $line){
           echo '<option value ="'.$line[0].'">'.$line[0].'</option>';
         }
 

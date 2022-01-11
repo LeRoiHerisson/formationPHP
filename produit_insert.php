@@ -9,7 +9,7 @@ require_once("config.php");
 try {
     $nom=$_POST["nom"];
     $prix=$_POST["prix"];
-	$stmt = $dbh->prepare("INSERT INTO produit (nom,prix) VALUES ($nom, $prix);");
+	$stmt = $dbh->prepare("INSERT INTO produit (nom,prix) VALUES ('$nom', '$prix');");
 	//$stmt->bindParam(":nom",$_GET["nom"]);
     //$stmt->bindParam(":prix",$_GET["prix"]);
 	$stmt->execute();

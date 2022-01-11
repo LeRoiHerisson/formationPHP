@@ -9,6 +9,16 @@
 
 
 <body>
+    <?php
+        
+        mysql_connect("localhost","root","root");
+        mysql_select_db("eCommercePHP");
+        $select="eCommercePHP";
+        if(isset($select)&&$select!=""){
+        $select=$_POST['NEW'];
+        }
+    ?>
+
 
 <form id="form_insert" action="client_insert.php" method="post">
 	<label for="nom">Nom :</label>
@@ -21,28 +31,17 @@
 	<input type="tel" id="telephone" name="telephone" required>
     <br>
         <form id="form1" name="form1" method="post" action="<?php $_SERVER['PHP_SELF']?>">
-        Car Name:
+        Adresse:
         <select name='NEW'>
         <option value="">--- Select ---</option>
-        <?php
-        mysql_connect("localhost","root","");
-        mysql_select_db("vinod");
-        $select="vinod";
-        if(isset($select)&&$select!=""){
-        $select=$_POST['NEW'];
-        }
-        ?>
-        <?php
-        $list=mysql_query("select * from car order by c_name asc");
-        while($row_list=mysql_fetch_assoc($list)){
-        ?>
-        <option value="<?php echo $row_list['c_id']; ?>">
-         <?php if($row_list['c_id']==$select){ echo "selected"; } ?>
-         <?php echo $row_list['c_name']; ?>
+        <option value="<?php echo $row_list['idadresse']; ?>">
+         <?php if($row_list['idadresse']==$select){ echo "selected"; } ?>
+         <?php echo $row_list['adresse']; ?>
+         <?php
+            $list=mysql_query("SELECT * FROM adresse ORDER BY adresse ASC");
+            while($row_list=mysql_fetch_assoc($list)){}
+            ?>
         </option>
-        <?php
-        }
-        ?>
         </select>
         </form>
     <br>

@@ -7,6 +7,7 @@ require_once("config.php");
 
 
 try {
+    if(isset($_POST['nom']) AND !empty($_POST['nom'])){
     $nom=$_POST["nom"];
     $email=$_POST["email"];
     $telephone=$_POST["telephone"];
@@ -14,15 +15,15 @@ try {
 	//$stmt->bindParam(":nom",$_GET["nom"]);
     //$stmt->bindParam(":prix",$_GET["prix"]);
 	$stmt->execute();
-    
+}   
 } catch (PDOException $e) {
 	print "Erreur !: " . $e->getMessage() . "<br/>";
 	die();
-}
+
  
 
 // SELECT * FROM etat;
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">

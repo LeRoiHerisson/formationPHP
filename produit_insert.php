@@ -7,9 +7,12 @@ require_once("config.php");
 
 
 try {
-	$stmt = $dbh->prepare("INSERT INTO etat (libelle) VALUES (:libelle);");
-	$stmt->bindValue(':libelle', $_GET['libelle'], PDO::PARAM_STR);
+	$stmt = $dbh->prepare("INSERT INTO produit (nom) VALUES (:nom);");
+	$stmt->bindValue(':nom', $_GET['nom'], PDO::PARAM_STR);
 	$stmt->execute();
+    $stmt2 = $dbh->prepare("INSERT INTO produit (prix) VALUES (:prix);");
+	$stmt2->bindValue(':prix', $_GET['prix'], PDO::PARAM_STR);
+	$stmt2->execute();
 } catch (PDOException $e) {
 	print "Erreur !: " . $e->getMessage() . "<br/>";
 	die();

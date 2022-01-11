@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etat Insert From</title>
+    <title>Formulaire</title>
 </head>
 
+
 <body>
-    etat_insert_form.html
-    Ajouter un nouvel etat<br /><br />
-    <form id="form_insert" action="etat_insert.php" method="get">
-        <label for="libelle">Libelle :</label>
-        <input type="text" id="libelle" name="libelle" required>
-        <button type="submit" form="form_insert" value="Submit">Valider</button>
-    </form>
+
+<form id="form_insert" action="etat_insert.php" method="get">
+	<label for="libelle">Libelle :</label>
+	<input type="text" id="libelle" name="libelle" required>
+	<button type="submit" form="form_insert" value="Submit">Valider</button>
+</form>
+
+<form id="form2_insert" action="produit_insert.php" method="get">
+	<label for="nom">Produit :</label>
+	<input type="text" id="nom" name="nom" required>
+	<button type="submit" form="form2_insert" value="Submit">Valider</button>
+</form>
 
 </body>
-
 </html>

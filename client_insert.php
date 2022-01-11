@@ -25,7 +25,7 @@ try {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,16 +35,6 @@ try {
 
 
 <body>
-    <?php
-        
-        mysql_connect("localhost","root","root");
-        mysql_select_db("eCommercePHP");
-        $select="eCommercePHP";
-        if(isset($select)&&$select!=""){
-        $select=$_POST['NEW'];
-        }
-    ?>
-
 
 <form id="form_insert" action="" method="post">
 	<label for="nom">Nom :</label>

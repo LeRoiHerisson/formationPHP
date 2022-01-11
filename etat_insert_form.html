@@ -11,8 +11,14 @@
 <body>
 
 <form id="form_insert" action="etat_insert.php" method="get">
-	<label for="libelle">Libelle :</label>
+ 	<label for="libelle">Libelle :</label>
 	<input type="text" id="libelle" name="libelle" required>
+	<button type="submit" form="form_insert" value="Submit">Valider</button>
+</form>
+
+<form id="form_insert" action="adresse_insert.php" method="get">
+	<label for="adresse">Adresse: :</label>
+	<input type="text" id="adresse" name="adresse" required>
 	<button type="submit" form="form_insert" value="Submit">Valider</button>
 </form>
 

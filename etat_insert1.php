@@ -2,9 +2,9 @@
 
 require_once("config.php");
 
-// Ã  faire avant 
-$stmt = $dbh->prepare("ALTER table etat modify idetat int AUTO_INCREMENT;");
-$stmt->execute();
+// Ã  faire avant sur workbench
+// ALTER table etat modify idetat int AUTO_INCREMENT;
+
 
 try {
 	$stmt = $dbh->prepare("INSERT INTO etat (libelle) VALUES (:libelle);");
@@ -14,4 +14,6 @@ try {
 	print "Erreur !: " . $e->getMessage() . "<br/>";
 	die();
 }
-?>
+?> 
+
+// SELECT * FROM 

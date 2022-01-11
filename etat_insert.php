@@ -6,13 +6,15 @@ error_reporting(E_ALL);
 
 $dbh = new PDO('mysql:host=localhost;dbname=eCommercePHP','root','root');
 
-// pull all the clients limit to 25
-
-$stmt=$dbh->prepare("SELECT * FROM etats
--- WHERE idclient = :idclient");
-
-$stmt->bindParam(':idetat', $_GET['idetat']);
-//pull php code
+// lancement de la requete
+$stmt = $dbh->prepare("INSERT INTO etat (libelle) VALUES (:libelle);");
+	$stmt->bindValue(':libelle', $_GET['libelle'], PDO::PARAM_STR);
+	
+    $stmt->execute();
+//} catch (PDOException $e) {
+//	print "Erreur !: " . $e->getMessage() . "<br/>";
+//	die();
+//}
 
 $stmt->execute();
 
@@ -24,9 +26,5 @@ $stmt->execute();
 <title>Insertion de etat dans la base</title>
 </head>
 <body></body>
-
-// lancement de la requete
-// $sql = 'INSERT INTO etat (libelle) VALUES (:libelle);"
-
 
 </html>

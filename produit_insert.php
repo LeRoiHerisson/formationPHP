@@ -8,8 +8,8 @@ require_once("config.php");
 
 try {
 	$stmt = $dbh->prepare("INSERT INTO produit (nom,prix) VALUES (:nom, :prix);");
-	$stmt->bindParam(":nom",$_GET["nom"]);
-    $stmt->bindParam(":prix",$_GET["prix"]);
+	//$stmt->bindParam(":nom",$_GET["nom"]);
+    //$stmt->bindParam(":prix",$_GET["prix"]);
 	$stmt->execute();
     
 } catch (PDOException $e) {

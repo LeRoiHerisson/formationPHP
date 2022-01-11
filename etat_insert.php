@@ -16,4 +16,4 @@ try {
 }
 ?> 
 
-// SELECT * FROM 
+// SELECT * FROM etats
